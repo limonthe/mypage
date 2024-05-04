@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>随机选择题和答案显示</title>
+        <meta charset="utf-8">
+        <style>
+            #question {
+                margin-bottom: 10px;
+            }
+            
+            #options {
+                margin-top: 20px;
+            }
+            
+            #answer {
+                margin-top: 20px;
+                display: none;
+            }
+            
+            #explanation {
+                margin-top: 20px;
+                display: none;
+            }
+            
+            #answer-show {
+                margin-top: 10px;
+            }
+            
+            #explanation-show {
+                margin-top: 10px;
+            }
+            
+            #timer {
+                font-size: 1.5em;
+                font-weight: bold;
+                text-align: center;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>随机选择题和答案显示</h1>
+        <div id="question"></div>
+        <div id="options"></div>
+        <div id="timer"></div>
+        <div>
+            <button id="answer-show" onclick="showAnswer()">显示答案</button>
+            <button id="explanation-show" onclick="showExplanation()">显示解析</button>
+            <button onclick="stopTimer()">停止计时器</button>
+            <button onclick="nextQuestion()">下一题</button>
+        </div>
+        <div id="answer"></div>
+        <div id="explanation"></div>
+        
+        <script>
+            // 生成一组选择题和答案
+            var questionAnswers = [
+                {
+                    "question": "1+1=？",
+                    "options": ["1", "2", "3", "4"],
+                    "answer": "2",
+                    "explanation": "1+1的结果是2。"
+                },
+                {
+                    "question": "2*2=？",
+                    "options": ["4", "6", "8", "10"],
+                    "answer": "4",
+                    "explanation": "2*2的结果是4。"
+                },
+                {
+                    "question": "10-5=？",
+                    "options": ["3", "4", "5", "6"],
+                    "answer": "5",
+                    "explanation": "10-5的结果是5。"
+                },
+                {
+                    "question": "100÷2=？",
+                    "options": ["50", "60", "70", "80"],
+                    "answer": "50",
+                    "explanation": "100÷2的结果是50。"
+                }
+            ];
+            
+            var currentQuestionIndex = 0;
+            var timerSeconds = 30;
+            var timerInterval;
+            
+            // 将当前问题和选项显示到 HTML 页面中
+            function showQuestion() {
+                var currentQuestion = questionAnswers[currentQuestionIndex].question;
+                var currentOptions = questionAnswers[currentQuestionIndex].options;
+                var questionElement = document.getElementById("question");
+                questionElement.innerHTML = "<h2>问题：</h2><p>" + currentQuestion + "</p>";
+                
+                var optionsElement = document.getElementById("options");
+                optionsElement.innerHTML = "";
+                for (var i = 0; i < currentOptions.length; i++) {
+                    var optionLabel = "<label><input type='radio' name='answer' value='" + currentOptions[i] + "'>" + currentOptions[i] + "</label><br>";
+                    optionsElement.innerHTML += optionLabel;
+                }
+                
+                // 重置计时器
+                clearInterval(timerInterval);
+                timerSeconds = 30;
+                var timerElement = document.getElementById("timer");
+                timerElement.innerHTML = "剩余时间：" + timerSeconds + "秒";
+                timerInterval = setInterval(updateTimer, 1000);
+            }
+
+        // 停止计时器的函数
+        function stopTimer() {
+            clearInterval(timerInterval);
+            var timerElement = document.getElementById("timer");
+            timerElement.innerHTML = "计时器已停止。";
+        }
+
+            // 更新计时器的函数
+            function updateTimer() {
+                timerSeconds -= 1;
+                var timerElement = document.getElementById("timer");
+                timerElement.innerHTML = "剩余时间：" + timerSeconds + "秒";
+                
+                if (timerSeconds <= 0) {
+                    clearInterval(timerInterval);
+                    showAnswer();
+                }
+            }
+            
+            // 显示答案的函数
+            function showAnswer() {
+                var currentAnswer = questionAnswers[currentQuestionIndex].answer;
+                var selectedAnswer = document.querySelector("input[name='answer']:checked");
+                
+                if (!selectedAnswer) {
+                    alert("请先选择一个答案！");
+                    return;
+                }
+            
+            var selectedValue = selectedAnswer.value;
+            
+            var answerElement = document.getElementById("answer");
+            if (selectedValue === currentAnswer) {
+                answerElement.innerHTML = "<h2>恭喜你，回答正确！</h2>";
+            } else {
+                answerElement.innerHTML = "<h2>回答错误，正确答案是：" + currentAnswer + "</h2>";
+            }
+            
+            answerElement.style.display = "block";
+            document.getElementById("answer-show").style.display = "none";
+            
+            // 停止计时器
+            clearInterval(timerInterval);
+        }
+        
+        // 显示解析的函数
+        function showExplanation() {
+            var currentExplanation = questionAnswers[currentQuestionIndex].explanation;
+            var explanationElement = document.getElementById("explanation");
+            explanationElement.innerHTML = "<h2>解析：</h2><p>" + currentExplanation + "</p><button onclick='hideExplanation()'>收起解析</button>";
+            explanationElement.style.display = "block";
+            document.getElementById("explanation-show").style.display = "none";
+        }
+        
+        // 隐藏解析的函数
+        function hideExplanation() {
+            var explanationElement = document.getElementById("explanation");
+            explanationElement.innerHTML = "";
+            explanationElement.style.display = "none";
+            document.getElementById("explanation-show").style.display = "block";
+        }
+        
+        // 切换到下一题的函数
+        function nextQuestion() {
+            currentQuestionIndex = (currentQuestionIndex + 1) % questionAnswers.length;
+            showQuestion();
+            hideAnswer();
+            hideExplanation();
+        }
+        
+        // 隐藏答案的函数
+        function hideAnswer() {
+            var answerElement = document.getElementById("answer");
+            answerElement.innerHTML = "";
+            answerElement.style.display = "none";
+            document.getElementById("answer-show").style.display = "block";
+        }
+        
+        showQuestion();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>随机题目和答案显示</title>
+        <meta charset="utf-8">
+        <style>
+            #question {
+                margin-bottom: 10px;
+            }
+            
+            #answer {
+                margin-top: 20px;
+                display: none;
+            }
+            
+            #answer-show {
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>随机题目和答案显示</h1>
+        <div id="question"></div>
+        <div>
+            <button id="answer-show" onclick="showAnswer()">显示答案</button>
+            <button onclick="nextQuestion()">下一题</button>
+        </div>
+        <div id="answer"></div>
+        
+        <script>
+            // 生成一组问题和答案
+            var questionAnswers = [
+                {
+                    "question": "2 + 2",
+                    "answer": "4"
+                },
+                {
+                    "question": "10 * 10",
+                    "answer": "100"
+                },
+                {
+                    "question": "8 - 3",
+                    "answer": "5"
+                },
+                {
+                    "question": "9 / 3",
+                    "answer": "3"
+                }
+            ];
+            
+            var currentQuestionIndex = 0;
+            
+            // 将当前问题显示到 HTML 页面中
+            function showQuestion() {
+                var currentQuestion = questionAnswers[currentQuestionIndex].question;
+                var questionElement = document.getElementById("question");
+                questionElement.innerHTML = "<h2>问题：</h2><p>" + currentQuestion + "</p>";
+            }
+            
+            // 显示答案的函数
+            function showAnswer() {
+                var currentAnswer = questionAnswers[currentQuestionIndex].answer;
+                var answerElement = document.getElementById("answer");
+                answerElement.innerHTML = "<h2>答案：</h2><p>" + currentAnswer + "</p><button onclick='hideAnswer()'>隐藏答案</button>";
+                answerElement.style.display = "block";
+                document.getElementById("answer-show").style.display = "none";
+            }
+            
+            // 隐藏答案的函数
+            function hideAnswer() {
+                var answerElement = document.getElementById("answer");
+                answerElement.innerHTML = "";
+                answerElement.style.display = "none";
+                document.getElementById("answer-show").style.display = "block";
+            }
+            
+            // 切换到下一题的函数
+            function nextQuestion() {
+                currentQuestionIndex = (currentQuestionIndex + 1) % questionAnswers.length;
+                showQuestion();
+                hideAnswer();
+            }
+            
+            showQuestion();
+        </script>
+    </body>
+</html>

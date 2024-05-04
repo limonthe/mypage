@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>浅尝辄止的尝试</title>
+  <link rel="stylesheet" href="/rebornlL/layui/css/layui.css"  media="all" >
+
+<ul class="layui-nav layui-bg-molv" lay-filter="">
+  <li class="layui-nav-item"><a href="/rebornlL/home.html">首页</a></li>
+  <li class="layui-nav-item layui-this"><a href="/rebornlL/packages/baselayui/sample.html">翻译</a></li> 
+  <li class="layui-nav-item"><a href="/rebornlL/packages/baselayui/corpus.html">俄语语料库</a></li>
+  <li class="layui-nav-item">
+    <a href="javascript:;">俄语学习</a>
+      <dl class="layui-nav-child"> <!-- 二级菜单 -->
+      <dd><a href="/rebornlL/packages/baselayui/grammar.html">俄语语法</a></dd>
+      <dd><a href="/rebornlL/packages/baselayui/reading.html">俄语阅读</a></dd>
+      <dd><a href="/rebornlL/packages/baselayui/history.html">俄语国家概况</a></dd>
+    </dl>
+  </li>
+  <li class="layui-nav-item">
+    <a href="javascript:;">学习社区</a>
+      <dl class="layui-nav-child">
+      <dd><a href="https://mp.weixin.qq.com/s/TOLLf1n5uFvDSmeUADPajA">公众号</a></dd>
+      <dd><a href="javascript:;">还没做</a></dd>
+      <dd><a href="javascript:;">没搞好</a></dd>
+      </dl>
+  <li class="layui-nav-item">
+    <a href="">烦人的红点<span class="layui-badge">7</span></a>
+  </li>
+  <li class="layui-nav-item">
+    <a href="">个人中心<span class="layui-badge-dot"></span></a>
+  </li>
+  <li class="layui-nav-item">
+    <a href=""><img src="/rebornlL/image/profile1.jpeg" class="layui-nav-img">我</a>
+    <dl class="layui-nav-child">
+      <dd><a href="javascript:;">改头换面</a></dd>
+      <dd><a href="javascript:;">内理朝政</a></dd>
+      <dd><a href="javascript:;">退隐江湖</a></dd>
+    </dl>
+  </li>
+</ul>
+
+<div class="layui-container">
+  <div class="layui-progress" style="margin: 15px 0 30px;">
+    <div class="layui-progress-bar" lay-percent="100%"></div>
+</div>
+
+</head>
+
+<body>
+
+<div class="layui-fluid">
+<link rel="stylesheet" href="/rebornlL/style.css"  media="all" type="text/css">
+<div class="container">
+      <div class="wrapper">
+        <div class="text-input">
+          <textarea spellcheck="false" class="from-text" placeholder="原文"></textarea>
+          <textarea spellcheck="false" readonly disabled class="to-text" placeholder="翻译"></textarea>
+        </div>
+        <ul class="controls">
+          <li class="row from">
+            <div class="icons">
+              <i id="from" class="fas fa-volume-up"></i>
+              <i id="from" class="fas fa-copy"></i>
+            </div>
+            <select></select>
+          </li>
+          <li class="exchange"><i class="fas fa-exchange-alt"></i></li>
+          <li class="row to">
+            <select></select>
+            <div class="icons">
+              <i id="to" class="fas fa-volume-up"></i>
+              <i id="to" class="fas fa-copy"></i>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <button>“是你在召唤我吗？”</button>
+    </div>
+    <script src="/rebornlL/js/countries.js"></script>
+    <script src="/rebornlL/js/script.js"></script>
+</div>
+
+<script>
+//注意：导航 依赖 element 模块，否则无法进行功能性操作
+layui.use('element', function(){
+  var element = layui.element;
+  
+  //…
+});
+</script>
+</style>
+
+<!-- body 末尾处引入 layui -->
+<script src="/rebornlL/layui/layui.js"></script>
+<script>
+layui.use(function(){
+  var layer = layui.layer
+  ,form = layui.form
+  ,laypage = layui.laypage
+  ,element = layui.element
+  ,laydate = layui.laydate
+  ,util = layui.util;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>浅尝辄止的尝试</title>
+  <link rel="stylesheet" href="/rebornlL/layui/css/layui.css" media="all">
+</head>
+
+
+
+<body>
+<div class="layui-layout layui-layout-admin">
+<ul class="layui-nav layui-bg-molv" lay-filter="">
+  <li class="layui-nav-item"><a href="/rebornlL/surface.html">关于我们</a></li>
+  <li class="layui-nav-item"><a href="/rebornlL/packages/baselayui/sample.html">翻译</a></li> 
+  <li class="layui-nav-item"><a href="/rebornlL/packages/baselayui/corpus.html">俄语语料库</a></li>
+  <li class="layui-nav-item layui-this">
+    <a href="javascript:;" >俄语学习</a>
+      <dl class="layui-nav-child"> <!-- 二级菜单 -->
+      <dd><a href="/rebornlL/packages/baselayui/grammar.html">俄语语法</a></dd>
+      <dd><a href="/rebornlL/packages/baselayui/reading.html">俄语阅读</a></dd>
+      <dd><a href="/rebornlL/packages/baselayui/history.html">俄语国家概况</a></dd>
+    </dl>
+  </li>
+  <li class="layui-nav-item">
+    <a href="javascript:;">学习社区</a>
+      <dl class="layui-nav-child">
+      <dd><a href="https://mp.weixin.qq.com/s/TOLLf1n5uFvDSmeUADPajA">公众号</a></dd>
+      <dd><a href="javascript:;">还没做</a></dd>
+      <dd><a href="javascript:;">没搞好</a></dd>
+      </dl>
+  <li class="layui-nav-item">
+    <a href="">烦人的红点<span class="layui-badge">7</span></a>
+  </li>
+  <li class="layui-nav-item">
+    <a href="">个人中心<span class="layui-badge-dot"></span></a>
+  </li>
+  <li class="layui-nav-item">
+    <a href=""><img src="/rebornlL/image/profile1.jpeg" class="layui-nav-img">我</a>
+    <dl class="layui-nav-child">
+      <dd><a href="javascript:;">改头换面</a></dd>
+      <dd><a href="javascript:;">内理朝政</a></dd>
+      <dd><a href="javascript:;">退隐江湖</a></dd>
+    </dl>
+  </li>
+</ul>
+
+<div class="layui-container">
+  <div class="layui-progress" style="margin: 30px 0 30px;">
+    <div class="layui-progress-bar" lay-percent="100%"></div>
+</div>
+
+
+
+
+<div class="layui-nav-side layui-panel" style="margin-top: 60px; margin-bottom:100px">
+  <ul class="layui-nav-side layui-menu " id="demo-menu" style="margin-top: 60px;margin-bottom:43px">
+      <ul>
+          <li class="layui-menu-item-group" lay-options="{type: 'group', isAllowSpread: false}">
+          <div class="layui-menu-body-title">概述</div>
+          <ul>
+            <li class="layui-menu-item-checked">
+              <div class="layui-menu-body-title">板块说明</div>
+            </li>
+            <li><div class="layui-menu-body-title">写在前面</div></li>
+          </ul>
+        </li>
+        <li><div class="layui-menu-body-title">tips</div></li>
+      </ul>
+    </li>
+    <li class="layui-menu-item-divider"></li>
+    
+    <li class="layui-menu-item-divider"></li>
+    <li class="layui-menu-item-group" lay-options="{type: 'group', isAllowSpread: false}">
+      <div class="layui-menu-body-title">词法</div>
+      <ul>
+        <li class="layui-menu-item-parent" lay-options="{type: 'parent'}">
+          <div class="layui-menu-body-title">
+            章节一：词的构成
+            <i class="layui-icon layui-icon-right"></i>
+          </div>
+          <div class="layui-panel layui-menu-body-panel">
+            <ul>
+              <li><div class="layui-menu-body-title">词类</div></li>
+              <li><div class="layui-menu-body-title">词素</div></li>
+              <li><div class="layui-menu-body-title">词干</div></li>
+              <li><div class="layui-menu-body-title">语音交替</div></li>
+              <li><div class="layui-menu-body-title">构词法</div></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li class="layui-menu-item-parent" lay-options="{type: 'parent'}">
+          <div class="layui-menu-body-title">
+            章节二：名词
+            <i class="layui-icon layui-icon-right"></i>
+          </div>
+          <div class="layui-panel layui-menu-body-panel">
+            <ul>
+              <li><div class="layui-menu-body-title">名词概述</div></li>
+              <li><div class="layui-menu-body-title">名词的性</div></li>
+              <li><div class="layui-menu-body-title">名词的数</div></li>
+              <li><div class="layui-menu-body-title">名词的格</div></li>
+              <li><div class="layui-menu-body-title">动名词</div></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="layui-menu-item-parent" lay-options="{type: 'parent'}">
+          <div class="layui-menu-body-title">
+            章节三：形容词
+            <i class="layui-icon layui-icon-right"></i>
+          </div>
+          <div class="layui-panel layui-menu-body-panel">
+            <ul>
+              <li><div class="layui-menu-body-title">形容词类型</div></li>
+              <li><div class="layui-menu-body-title">形容词的性</div></li>
+              <li><div class="layui-menu-body-title">形容词的数</div></li>
+              <li><div class="layui-menu-body-title">形容词的格</div></li>
+              <li><div class="layui-menu-body-title">形容词短尾</div></li>
+              <li><div class="layui-menu-body-title">形容词比较级</div></li>
+              <li><div class="layui-menu-body-title">形容词最高级</div></li>
+              <li><div class="layui-menu-body-title">关系形容词</div></li>
+              <li><div class="layui-menu-body-title">物主形容词</div></li>
+              <li><div class="layui-menu-body-title">形容词名词化</div></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="layui-menu-item-parent" lay-options="{type: 'parent'}">
+          <div class="layui-menu-body-title">
+            章节四：数词
+            <i class="layui-icon layui-icon-right"></i>
+          </div>
+          <div class="layui-panel layui-menu-body-panel">
+            <ul>
+              <li><div class="layui-menu-body-title">定量数词</div></li>
+              <li><div class="layui-menu-body-title">顺序数词</div></li>
+              <li><div class="layui-menu-body-title">集合数词</div></li>
+              <li><div class="layui-menu-body-title">不定量数词</div></li>
+              <li><div class="layui-menu-body-title">分数数词</div></li>
+              <li><div class="layui-menu-body-title">时间表示法</div></li>
+              <li><div class="layui-menu-body-title">年龄表示法</div></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="layui-menu-item-parent" lay-options="{type: 'parent'}">
+          <div class="layui-menu-body-title">
+            章节五：代词
+            <i class="layui-icon layui-icon-right"></i>
+          </div>
+          <div class="layui-panel layui-menu-body-panel">
+            <ul>
+              <li><div class="layui-menu-body-title">人称代词</div></li>
+              <li><div class="layui-menu-body-title">反身代词</div></li>
+              <li><div class="layui-menu-body-title">物主代词</div></li>
+              <li><div class="layui-menu-body-title">指示代词</div></li>
+              <li><div class="layui-menu-body-title">限定代词</div></li>
+              <li><div class="layui-menu-body-title">疑问代词</div></li>
+              <li><div class="layui-menu-body-title">否定代词</div></li>
+              <li><div class="layui-menu-body-title">不定代词</div></li>
+              <li><div class="layui-menu-body-title">关系代词</div></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="layui-menu-item-parent" lay-options="{type: 'parent'}">
+          <div class="layui-menu-body-title">
+            章节六：动词
+            <i class="layui-icon layui-icon-right"></i>
+          </div>
+          <div class="layui-panel layui-menu-body-panel">
+            <ul>
+              <li><div class="layui-menu-body-title">动词不定式</div></li>
+              <li><div class="layui-menu-body-title">动词的变化</div></li>
+              <li><div class="layui-menu-body-title">动词时态</div></li>
+              <li><div class="layui-menu-body-title">动词的体</div></li>
+              <li><div class="layui-menu-body-title">动词的式</div></li>
+              <li><div class="layui-menu-body-title">及物动词与不及物动词</div></li>
+              <li><div class="layui-menu-body-title">无人称动词</div></li>
+              <li><div class="layui-menu-body-title">运动动词</div></li>
+              <li><div class="layui-menu-body-title">形动词</div></li>
+              <li><div class="layui-menu-body-title">副动词</div></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="layui-menu-item-parent" lay-options="{type: 'parent'}">
+          <div class="layui-menu-body-title">
+            章节七：副词
+            <i class="layui-icon layui-icon-right"></i>
+          </div>
+          <div class="layui-panel layui-menu-body-panel">
+            <ul>
+              <li><div class="layui-menu-body-title">副词分类</div></li>
+              <li><div class="layui-menu-body-title">性质副词的比较级</div></li>
+              <li><div class="layui-menu-body-title">性质副词的最高级</div></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="layui-menu-item-parent" lay-options="{type: 'parent'}">
+          <div class="layui-menu-body-title">
+            章节八：前置词
+            <i class="layui-icon layui-icon-right"></i>
+          </div>
+          <div class="layui-panel layui-menu-body-panel">
+            <ul>
+              <li><div class="layui-menu-body-title">前置词的意义与语法特征</div></li>
+              <li><div class="layui-menu-body-title">常用前置词的意义与用法</div></li>
+              <li><div class="layui-menu-body-title">表示空间意义的前置词</div></li>
+              <li><div class="layui-menu-body-title">表示时间意义的前置词</div></li>
+              <li><div class="layui-menu-body-title">表示原因关系的前置词</div></li>
+              <li><div class="layui-menu-body-title">表示目的关系的前置词</div></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="layui-menu-item-parent" lay-options="{type: 'parent'}">
+          <div class="layui-menu-body-title">
+            章节九：连接词
+            <i class="layui-icon layui-icon-right"></i>
+          </div>
+          <div class="layui-panel layui-menu-body-panel">
+            <ul>
+              <li><div class="layui-menu-body-title">连接词分类</div></li>
+              <li><div class="layui-menu-body-title">并列连接词</div></li>
+              <li><div class="layui-menu-body-title">主从连接词</div></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="layui-menu-item-parent" lay-options="{type: 'parent'}">
+          <div class="layui-menu-body-title">
+            章节十：语气词与感叹词
+            <i class="layui-icon layui-icon-right"></i>
+          </div>
+          <div class="layui-panel layui-menu-body-panel">
+            <ul>
+              <li><div class="layui-menu-body-title">语气词分类</div></li>
+              <li><div class="layui-menu-body-title">常见语气词用法</div></li>
+              <li><div class="layui-menu-body-title">表示情感的感叹词</div></li>
+              <li><div class="layui-menu-body-title">表示意愿的感叹词</div></li>
+
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </li>
+    <li class="layui-menu-item-divider"></li>
+    <li class="layui-menu-item-group" lay-options="{type: 'group', isAllowSpread: false}">
+      <div class="layui-menu-body-title">句法</div>
+      <ul>
+        <li class="layui-menu-item-parent" lay-options="{type: 'parent'}">
+          <div class="layui-menu-body-title">
+            章节一：句子分类
+            <i class="layui-icon layui-icon-right"></i>
+          </div>
+          <div class="layui-panel layui-menu-body-panel">
+            <ul>
+              <li><div class="layui-menu-body-title">陈疑祈感</div></li>
+              <li><div class="layui-menu-body-title">肯定与否定句</div></li>
+              <li><div class="layui-menu-body-title">简单与复合句</div></li>
+              <li><div class="layui-menu-body-title">单部与双部句</div></li>
+              <li><div class="layui-menu-body-title">句子成分</div></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li class="layui-menu-item-parent" lay-options="{type: 'parent'}">
+          <div class="layui-menu-body-title">
+            章节二：双部句
+            <i class="layui-icon layui-icon-right"></i>
+          </div>
+          <div class="layui-panel layui-menu-body-panel">
+            <ul>
+              <li><div class="layui-menu-body-title">主语及其表示法</div></li>
+              <li><div class="layui-menu-body-title">谓语及其表示法</div></li>
+              <li><div class="layui-menu-body-title">主谓之间协调关系</div></li>
+              <li><div class="layui-menu-body-title">主谓之间破折号</div></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="layui-menu-item-parent" lay-options="{type: 'parent'}">
+          <div class="layui-menu-body-title">
+            章节三：句子的次要成分
+            <i class="layui-icon layui-icon-right"></i>
+          </div>
+          <div class="layui-panel layui-menu-body-panel">
+            <ul>
+              <li><div class="layui-menu-body-title">补语</div></li>
+              <li><div class="layui-menu-body-title">定语</div></li>
+              <li><div class="layui-menu-body-title">同位语</div></li>
+              <li><div class="layui-menu-body-title">状语</div></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="layui-menu-item-parent" lay-options="{type: 'parent'}">
+          <div class="layui-menu-body-title">
+            章节四：单部句
+            <i class="layui-icon layui-icon-right"></i>
+          </div>
+          <div class="layui-panel layui-menu-body-panel">
+            <ul>
+              <li><div class="layui-menu-body-title">确定人称句</div></li>
+              <li><div class="layui-menu-body-title">不定人称句</div></li>
+              <li><div class="layui-menu-body-title">泛指人称句</div></li>
+              <li><div class="layui-menu-body-title">无人称句</div></li>
+              <li><div class="layui-menu-body-title">称名句</div></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="layui-menu-item-parent" lay-options="{type: 'parent'}">
+          <div class="layui-menu-body-title">
+            章节五：句子的同等成分
+            <i class="layui-icon layui-icon-right"></i>
+          </div>
+          <div class="layui-panel layui-menu-body-panel">
+            <ul>
+              <li><div class="layui-menu-body-title">同等成分概述</div></li>
+              <li><div class="layui-menu-body-title">同等成分中的连接词</div></li>
+              <li><div class="layui-menu-body-title">同等成分中的一致关系</div></li>
+              <li><div class="layui-menu-body-title">总括词</div></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="layui-menu-item-parent" lay-options="{type: 'parent'}">
+          <div class="layui-menu-body-title">
+            章节六：句子的独立成分
+            <i class="layui-icon layui-icon-right"></i>
+          </div>
+          <div class="layui-panel layui-menu-body-panel">
+            <ul>
+              <li><div class="layui-menu-body-title">独立定语</div></li>
+              <li><div class="layui-menu-body-title">独立同位语</div></li>
+              <li><div class="layui-menu-body-title">独立状语</div></li>
+              <li><div class="layui-menu-body-title">一些独立结构</div></li>
+              <li><div class="layui-menu-body-title">插入结构</div></li>
+              <li><div class="layui-menu-body-title">呼语</div></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="layui-menu-item-parent" lay-options="{type: 'parent'}">
+          <div class="layui-menu-body-title">
+            章节七：并列复合句
+            <i class="layui-icon layui-icon-right"></i>
+          </div>
+          <div class="layui-panel layui-menu-body-panel">
+            <ul>
+              <li><div class="layui-menu-body-title">表示联合关系</div></li>
+              <li><div class="layui-menu-body-title">表示对别关系</div></li>
+              <li><div class="layui-menu-body-title">表示区分关系</div></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="layui-menu-item-parent" lay-options="{type: 'parent'}">
+          <div class="layui-menu-body-title">
+            章节八：主从复合句
+            <i class="layui-icon layui-icon-right"></i>
+          </div>
+          <div class="layui-panel layui-menu-body-panel">
+            <ul>
+              <li><div class="layui-menu-body-title">限定从句</div></li>
+              <li><div class="layui-menu-body-title">说明从句</div></li>
+              <li><div class="layui-menu-body-title">行为方法度量从句</div></li>
+              <li><div class="layui-menu-body-title">比较从句</div></li>
+              <li><div class="layui-menu-body-title">处所从句</div></li>
+              <li><div class="layui-menu-body-title">时间从句</div></li>
+              <li><div class="layui-menu-body-title">条件从句</div></li>
+              <li><div class="layui-menu-body-title">让步从句</div></li>
+              <li><div class="layui-menu-body-title">原因从句</div></li>
+              <li><div class="layui-menu-body-title">目的从句</div></li>
+              <li><div class="layui-menu-body-title">结果从句</div></li>
+              <li><div class="layui-menu-body-title">接续从句</div></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="layui-menu-item-parent" lay-options="{type: 'parent'}">
+          <div class="layui-menu-body-title">
+            章节九：无连接词复合句
+            <i class="layui-icon layui-icon-right"></i>
+          </div>
+          <div class="layui-panel layui-menu-body-panel">
+            <ul>
+              <li><div class="layui-menu-body-title">与并列复合句语义相近</div></li>
+              <li><div class="layui-menu-body-title">与主从复合句语义相近</div></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="layui-menu-item-parent" lay-options="{type: 'parent'}">
+          <div class="layui-menu-body-title">
+            章节十：引语
+            <i class="layui-icon layui-icon-right"></i>
+          </div>
+          <div class="layui-panel layui-menu-body-panel">
+            <ul>
+              <li><div class="layui-menu-body-title">直接引语的标点符号</div></li>
+              <li><div class="layui-menu-body-title">与间接引语代换直接引语</div></li>
+            </ul>
+          </div>
+        </li>
+
+  </ul>
+</div>
+
+
+
+
+<fieldset class="layui-elem-field layui-field-title">
+  <legend><h1>板块说明<h1></legend>
+</fieldset>
+内容写在外面
+<hr class="layui-border-green">
+
+<fieldset class="layui-elem-field">
+  <legend>标题</legend>
+  <div class="layui-field-box">
+    任意内容
+  </div>
+</fieldset>
+
+<div class="layui-container">
+  <div class="layui-progress" style="margin: 15px 0 30px;">
+    <div class="layui-progress-bar" lay-percent="100%"></div>
+</div>
+
+ <div class="layui-footer">
+    <!-- 底部固定区域 -->
+    底部固定区域
+ </div>
+</div>
+
+<script src="//cdn.staticfile.org/layui/2.8.3/layui.js"></script>
+<script>
+layui.use(function(){
+  var dropdown = layui.dropdown;
+  var layer = layui.layer;
+  var util = layui.util;
+  // 菜单点击事件
+  dropdown.on('click(demo-menu)', function(options){
+    console.log(this, options);
+    
+    // 显示 - 仅用于演示
+    layer.msg(util.escape(JSON.stringify(options)));
+  });
+});
+</script>
+
+<script>
+//注意：导航 依赖 element 模块，否则无法进行功能性操作
+layui.use('element', function(){
+  var element = layui.element;
+  
+  //…
+});
+</script>
+
+
+ 
+
+<!-- body 末尾处引入 layui -->
+<script src="/rebornlL/layui/layui.js"></script>
+<script>
+layui.use(function(){
+  var layer = layui.layer
+  ,form = layui.form
+  ,laypage = layui.laypage
+  ,element = layui.element
+  ,laydate = layui.laydate
+  ,util = layui.util;
+</script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>layout 管理界面大布局示例 - Layui</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="//cdn.staticfile.org/layui/2.8.4/css/layui.css" rel="stylesheet">
+        <style>
+            #question {
+                margin-bottom: 10px;
+            }
+            
+            #options {
+                margin-top: 20px;
+            }
+            
+            #answer {
+                margin-top: 20px;
+                display: none;
+            }
+            
+            #explanation {
+                margin-top: 20px;
+                display: none;
+            }
+            
+            #answer-show {
+                margin-top: 10px;
+            }
+            
+            #explanation-show {
+                margin-top: 10px;
+            }
+            
+            #timer {
+                font-size: 1.5em;
+                font-weight: bold;
+                text-align: center;
+                margin-top: 20px;
+            }
+        </style>
+</head>
+<body>
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+    <div class="layui-logo layui-hide-xs layui-bg-black">答题demo-选择题v2</div>
+    <!-- 头部区域（可配合layui 已有的水平导航） -->
+    <ul class="layui-nav layui-layout-left">
+      <!-- 移动端显示 -->
+      <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-header-event="menuLeft">
+        <i class="layui-icon layui-icon-spread-left"></i>
+      </li>
+      <li class="layui-nav-item layui-hide-xs"><a href="javascript:;">首页</a></li>
+      <li class="layui-nav-item layui-hide-xs"><a href="javascript:;">翻译</a></li>
+      <li class="layui-nav-item layui-hide-xs"><a href="javascript:;">语料库</a></li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">俄语学习</a>
+        <dl class="layui-nav-child">
+          <dd><a href="javascript:;">menu 11</a></dd>
+          <dd><a href="javascript:;">menu 22</a></dd>
+          <dd><a href="javascript:;">menu 33</a></dd>
+        </dl>
+      </li>
+    </ul>
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item layui-hide layui-show-sm-inline-block">
+        <a href="javascript:;">
+          <img src="//unpkg.com/outeres@0.0.10/img/layui/icon-v2.png" class="layui-nav-img">
+          tester
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="javascript:;">Your Profile</a></dd>
+          <dd><a href="javascript:;">Settings</a></dd>
+          <dd><a href="javascript:;">Sign out</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
+        <a href="javascript:;">
+          <i class="layui-icon layui-icon-more-vertical"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree" lay-filter="test">
+        <li class="layui-nav-item layui-nav-itemed">
+          <a class="" href="javascript:;">基础知识</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">俄语语法</a></dd>
+            <dd><a href="javascript:;">俄语阅读</a></dd>
+            <dd><a href="javascript:;">单词、词组与例句</a></dd>
+            <dd><a href="javascript:;">俄语国家概况</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">更多学习</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">翻译相关</a></dd>
+            <dd><a href="javascript:;"></a></dd>
+            
+          </dl>
+        </li>
+        <li class="layui-nav-item"><a href="javascript:;">翻译</a></li>
+        <li class="layui-nav-item"><a href="javascript:;">更多工具</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="layui-body">
+    <!-- 内容主体区域 -->
+    <div style="padding: 15px;">
+      <blockquote class="layui-elem-quote layui-text">
+        即时习题显示与解析演示
+      </blockquote>
+      <div class="layui-card layui-panel">
+        <div class="layui-card-header">
+                  <h1>随机选择题和答案显示</h1>
+        <div id="question"></div>
+        <div id="options"></div>
+        <div id="timer"></div>
+        <div>
+            <button id="answer-show" onclick="showAnswer()" type="button" class="layui-btn layui-btn-warm">显示答案</button>
+            <button id="explanation-show" onclick="showExplanation()" type="button" class="layui-btn layui-btn-danger">显示解析</button>
+            <button onclick="stopTimer()" class="layui-btn layui-btn-primary layui-border-red">停止计时器</button>
+            <button onclick="nextQuestion()" type="button" class="layui-btn layui-btn-primary">下一题</button>
+        </div>
+        <div id="answer"></div>
+        <div id="explanation"></div>
+        
+        <script>
+            // 生成一组选择题和答案
+            var questionAnswers = [
+                {
+                    "question": "Мы стояли под деревом, пока（  ）дождь.",
+                    "options": ["пошёл", "шёл", "идёт", "ходил"],
+                    "answer": "шёл",
+                    "explanation": "运动动词用于转义时，失去运动动词的含义-没有定向与不定向之分。"
+                },
+                {
+                    "question": "2*2=？",
+                    "options": ["4", "6", "8", "10"],
+                    "answer": "4",
+                    "explanation": "2*2的结果是4。"
+                },
+                {
+                    "question": "10-5=？",
+                    "options": ["3", "4", "5", "6"],
+                    "answer": "5",
+                    "explanation": "10-5的结果是5。"
+                },
+                {
+                    "question": "100÷2=？",
+                    "options": ["50", "60", "70", "80"],
+                    "answer": "50",
+                    "explanation": "100÷2的结果是50。"
+                }
+            ];
+            
+            var currentQuestionIndex = 0;
+            var timerSeconds = 30;
+            var timerInterval;
+            
+            // 将当前问题和选项显示到 HTML 页面中
+            function showQuestion() {
+                var currentQuestion = questionAnswers[currentQuestionIndex].question;
+                var currentOptions = questionAnswers[currentQuestionIndex].options;
+                var questionElement = document.getElementById("question");
+                questionElement.innerHTML = "<h2>问题：</h2><p>" + currentQuestion + "</p>";
+                
+                var optionsElement = document.getElementById("options");
+                optionsElement.innerHTML = "";
+                for (var i = 0; i < currentOptions.length; i++) {
+                    var optionLabel = "<label><input type='radio' name='answer' value='" + currentOptions[i] + "'>" + currentOptions[i] + "</label><br>";
+                    optionsElement.innerHTML += optionLabel;
+                }
+                
+                // 重置计时器
+                clearInterval(timerInterval);
+                timerSeconds = 30;
+                var timerElement = document.getElementById("timer");
+                timerElement.innerHTML = "剩余时间：" + timerSeconds + "秒";
+                timerInterval = setInterval(updateTimer, 1000);
+            }
+
+        // 停止计时器的函数
+        function stopTimer() {
+            clearInterval(timerInterval);
+            var timerElement = document.getElementById("timer");
+            timerElement.innerHTML = "计时器已停止。";
+        }
+
+            // 更新计时器的函数
+            function updateTimer() {
+                timerSeconds -= 1;
+                var timerElement = document.getElementById("timer");
+                timerElement.innerHTML = "剩余时间：" + timerSeconds + "秒";
+                
+                if (timerSeconds <= 0) {
+                    clearInterval(timerInterval);
+                    showAnswer();
+                }
+            }
+            
+            // 显示答案的函数
+            function showAnswer() {
+                var currentAnswer = questionAnswers[currentQuestionIndex].answer;
+                var selectedAnswer = document.querySelector("input[name='answer']:checked");
+                
+                if (!selectedAnswer) {
+                    alert("请先选择一个答案！");
+                    return;
+                }
+            
+            var selectedValue = selectedAnswer.value;
+            
+            var answerElement = document.getElementById("answer");
+            if (selectedValue === currentAnswer) {
+                answerElement.innerHTML = "<h2>恭喜你，回答正确！</h2>";
+            } else {
+                answerElement.innerHTML = "<h2>回答错误，正确答案是：" + currentAnswer + "</h2>";
+            }
+            
+            answerElement.style.display = "block";
+            document.getElementById("answer-show").style.display = "none";
+            
+            // 停止计时器
+            clearInterval(timerInterval);
+        }
+        
+        // 显示解析的函数
+        function showExplanation() {
+            var currentExplanation = questionAnswers[currentQuestionIndex].explanation;
+            var explanationElement = document.getElementById("explanation");
+            explanationElement.innerHTML = "<h2>解析：</h2><p>" + currentExplanation + "</p><button onclick='hideExplanation()' >收起解析</button>";
+            explanationElement.style.display = "block";
+            document.getElementById("explanation-show").style.display = "none";
+        }
+        
+        // 隐藏解析的函数
+        function hideExplanation() {
+            var explanationElement = document.getElementById("explanation");
+            explanationElement.innerHTML = "";
+            explanationElement.style.display = "none";
+            document.getElementById("explanation-show").style.display = "block";
+        }
+        
+        // 切换到下一题的函数
+        function nextQuestion() {
+            currentQuestionIndex = (currentQuestionIndex + 1) % questionAnswers.length;
+            showQuestion();
+            hideAnswer();
+            hideExplanation();
+        }
+        
+        // 隐藏答案的函数
+        function hideAnswer() {
+            var answerElement = document.getElementById("answer");
+            answerElement.innerHTML = "";
+            answerElement.style.display = "none";
+            document.getElementById("answer-show").style.display = "block";
+        }
+        
+        showQuestion();
+    </script>
+        </div>
+        <div class="layui-card-body">
+        
+        </div>
+      </div>
+      <br><br>
+    </div>
+  </div>
+  <div class="layui-footer">
+    <!-- 底部固定区域 -->
+    管理员：Limonthe
+  </div>
+</div>
+ 
+<script src="//cdn.staticfile.org/layui/2.8.4/layui.js"></script>
+<script>
+//JS 
+layui.use(['element', 'layer', 'util'], function(){
+  var element = layui.element;
+  var layer = layui.layer;
+  var util = layui.util;
+  var $ = layui.$;
+  
+  //头部事件
+  util.event('lay-header-event', {
+    menuLeft: function(othis){ // 左侧菜单事件
+      layer.msg('展开左侧菜单的操作', {icon: 0});
+    },
+    menuRight: function(){  // 右侧菜单事件
+      layer.open({
+        type: 1,
+        title: '更多',
+        content: '<div style="padding: 15px;">处理右侧面板的操作</div>',
+        area: ['260px', '100%'],
+        offset: 'rt', // 右上角
+        anim: 'slideLeft', // 从右侧抽屉滑出
+        shadeClose: true,
+        scrollbar: false
+      });
+    }
+  });
+});
+</script>
+</body>
+</html>

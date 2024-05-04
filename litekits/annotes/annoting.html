@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head><title>
+	Russian stress-marking tool
+</title><link href="/rebornlL/litekits/annotes/Styles/Site.css" rel="stylesheet" type="text/css" /><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" src="/rebornlL/litekits/annotes/code.jquery.com/jquery-1.9.1.js"></script>
+
+    <script type="text/javascript">
+        function setCookie(cname, cvalue) {
+            var exdays = 365;
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) === ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) === 0) {
+                    var found = c.substring(name.length, c.length);
+                    return found;
+                }
+            }
+            return "";
+        }
+
+        function restoreVisibility(cssClass) {
+            var id = cssClass + "-visible";
+            var checkbox = document.getElementById(id);
+            var value = getCookie(id);
+            if (!!value) {
+                checkbox.checked = value === 'true';
+                toggleVisibility(checkbox, cssClass);
+            }
+        }
+        $(document).ready(function () {
+            /* Handler for keydown event */
+            $('body').keydown(function (e) {
+                if (e.ctrlKey && e.keyCode === 13) {
+                    /* Ctrl-Enter pressed */
+                    /* Emulate "Annotate" button click */
+                    $('#MainContent_SubmitButton').click();
+                }
+            });
+            var stressmark_button = document.getElementById(getCookie("stressmark-button"));
+            if (!stressmark_button) stressmark_button = document.getElementById("stress-style-red");
+            stressmark_button.click();
+
+            restoreVisibility("russian");
+            restoreVisibility("translation");
+            restoreVisibility("sounds-like");
+        });
+
+        function toggleVisibility(sender, css_class) {
+            $("." + css_class).css("display", sender.checked ? "block" : "none");
+            setCookie(sender.id, sender.checked);
+        }
+        function setStressMarkCssClass(sender, css_class) {
+            $("u").removeClass().attr("class", css_class);
+            $(".stress-style-button").css("border-width", "0");
+            sender.style.border = "1px solid red";
+            setCookie("stressmark-button", sender.id);
+        }
+    </script>
+</head>
+<body>
+    <form method="post" action="./" id="ctl01">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTMzOTA3OTU5N2Rk5MNrzf8M72AYC/+c+xWZbzp8Td8=" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+	<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+	<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAMDOEAYUxkPEDCURzqp69xETjsDcGH04u5hS3jwIIl38e/d1Dv61Nm9xfklcqY855XV2JJyoBPZpaGFe8T+7UtRw3M4iA==" />
+</div>
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <a href="./">RussianGram.com</a>
+            </div>
+            <div class="subtitle">
+                <a href="./">Add stress marks to Russian text</a>
+            </div>
+            <div>
+                
+
+            </div>
+        </div>
+        <div class="main">
+            
+
+
+    <div class="tickboxes highlights">
+        <div class="tickbox"><input type="checkbox" id="russian-visible" onclick="javascript:toggleVisibility(this, 'russian');" checked="checked"/><label for="russian-visible">Russian</label></div>
+        <div class="tickbox"><input type="checkbox" id="translation-visible" onclick="javascript:toggleVisibility(this, 'translation');" checked="checked"/><label for="translation-visible">English</label></div>
+        <div class="tickbox"><input type="checkbox" id="sounds-like-visible" onclick="javascript:toggleVisibility(this, 'sounds-like');" checked="checked"/><label for="sounds-like-visible">RU-glish</label></div>
+
+        <div class="stress-style-button" onclick="javascript:setStressMarkCssClass(this, 'stressMarkRed');" id="stress-style-red"><div style="color: Red">а</div></div>
+        <div class="stress-style-button" onclick="javascript:setStressMarkCssClass(this, 'stressMarkUnderline');" id="stress-style-underline"><div style="text-decoration: underline">а</div></div>
+        <div class="stress-style-button" onclick="javascript:setStressMarkCssClass(this, 'stressMarkAccent');" id="stress-style-accent"><div>а́</div></div>
+    </div>
+
+    <div style="margin-top: 2em;">
+        <div onkeypress="javascript:return WebForm_FireDefaultButton(event, &#39;MainContent_SubmitButton&#39;)">
+	
+
+            <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td style="width: 99%; padding-right: 0.5em">
+                        <textarea name="ctl00$MainContent$UserSentenceTextbox" rows="5" cols="20" id="MainContent_UserSentenceTextbox" class="input-textbox" style="width:100%;">
+Я люблю́ ру́сский язы́к!</textarea>
+                    </td>
+                    <td class="highlights" style="vertical-align: top; text-align: center">
+                        <input type="submit" name="ctl00$MainContent$SubmitButton" value="Annotate" id="MainContent_SubmitButton" class="big-button" />
+                        (Ctrl+Enter)
+                    </td>
+                </tr>
+            </table>
+        
+</div>
+    </div>
+
+    
+
+    <div style="background: white; margin-top: 2em; margin-bottom: 2em; font-family: Arial">
+         <span class="cell"><span class="russian" style="display: block">Я </span><span class="sounds-like" style="display: block"><span>yah</span></span><span class="translation" style="display: block"><span>I</span></span></span> <span class="cell"><span class="russian" style="display: block">любл<u>ю</u> </span><span class="sounds-like" style="display: block"><span>lewb-LEW</span></span><span class="translation" style="display: block"><span>love</span></span></span> <span class="cell"><span class="russian" style="display: block">р<u>у</u>сский </span><span class="sounds-like" style="display: block"><span>ROOS-skiy</span></span><span class="translation" style="display: block"><span>Russian</span></span></span> <span class="cell"><span class="russian" style="display: block">яз<u>ы</u>к!</span><span class="sounds-like" style="display: block"><span>yee-ZIK</span></span><span class="translation" style="display: block"><span>language</span></span></span>
+    </div>
+
+    <h2>What is this?</h2>
+
+    <p>
+        RussianGram.com helps you read and understand Russian by automatically adding stress marks and dots above the letter Ё.
+        Just copy and paste some Russian text into the box above and click Annotate.
+    </p>
+
+    <h2>The Russiangram App</h2>
+
+    <p> Wish all web pages had stress marks?  You are a few clicks away from making this possible. 
+        Get our new browser extension from the Google Chrome web store.  Completely free.
+        <a href="chrome-extension/">Get the app</a>.
+    </p>
+
+    <script type="text/javascript" language='javascript'>
+        var textbox = document.getElementById('MainContent_UserSentenceTextbox');
+        textbox.select();
+    </script>
+
+
+
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                var disqus_shortname = 'russiangram'; // required: replace example with your forum shortname
+
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function () {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+        </div>
+
+    </div>
+    <div class="footer">
+
+    </div>
+    
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['ctl01'];
+if (!theForm) {
+    theForm = document.ctl01;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/rebornlL/litekits/annotes/what.js" type="text/javascript"></script>
+</form>
+
+
+</body>
+</html>

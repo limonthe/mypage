@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>layout 管理界面大布局示例 - Layui</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="//cdn.staticfile.org/layui/2.8.6/css/layui.css" rel="stylesheet">
+
+  <style>
+    body {
+      padding: 30px;
+    }
+    .image-box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 30px;
+      position: relative;
+    }
+    .image {
+      position: relative;
+      width: 500px;
+      height: 500px;
+      margin: 30px;
+      border: 1px solid #eee;
+      border-radius: 5px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .image:hover img {
+      transform: scale(1.1);
+    }
+    .caption {
+      position: absolute;
+      left: 50%;
+      bottom: -50%;
+      transform: translate(-50%, 0%);
+      width: 100%;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      font-size: 18px;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.5s ease, bottom 0.5s ease;
+    }
+    .image:hover .caption {
+      bottom: 0%;
+      opacity: 1;
+    }
+  </style>
+
+</head>
+<body>
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+    <div class="layui-logo layui-hide-xs layui-bg-black">layout demo</div>
+    <!-- 头部区域（可配合layui 已有的水平导航） -->
+    <ul class="layui-nav layui-layout-left">
+      <!-- 移动端显示 -->
+      <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-header-event="menuLeft">
+        <i class="layui-icon layui-icon-spread-left"></i>
+      </li>
+      <li class="layui-nav-item layui-hide-xs"><a href="">问答模型（开发中）</a></li>
+      <li class="layui-nav-item layui-hide-xs"><a href="">关于我们</a></li>
+      <li class="layui-nav-item layui-hide-xs"><a href="">更多功能</a></li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">在线工具</a>
+        <dl class="layui-nav-child">
+          <dd><a href="https://russiangram.com/">重音标注</a></dd>
+          <dd><a href="">电子词典</a></dd>
+          <dd><a href="">正字法词典</a></dd>
+          <dd><a href="https://ruscorpora.ru/">俄罗斯国家语料库</a></dd>
+          <dd><a href="https://chatglm.cn/main/gdetail/66093f4ce836c30d2e257bbb">斯拉夫文学工具人</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item "><a href="surface.html">旧版本的页面</a></li>
+    </ul>
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item layui-hide layui-show-md-inline-block">
+        <a href="javascript:;">
+          <img src="image/profile1.jpeg" class="layui-nav-img">
+          个人面板
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="">Your Profile</a></dd>
+          <dd><a href="">Settings</a></dd>
+          <dd><a href="">Sign out</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
+        <a href="javascript:;">
+          <i class="layui-icon layui-icon-more-vertical"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree" lay-filter="test">
+        <li class="layui-nav-item layui-nav-itemed">
+          <a class="" href="javascript:;">俄罗斯历史</a>
+          <dl class="layui-nav-child">
+            <dd><a href="/rebornlL/packages/baselayui/history.html">时间概述</a></dd>
+            <dd><a href="/rebornlL/packages/baselayui/reading.html">历史概述</a></dd>
+            <dd><a href="javascript:;">历史之最</a></dd>
+            <dd><a class="layui-this" href="/rebornlL/packages/baselayui/history/historyhometest.html">历史阶段</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item layui-nav-itemed">
+          <a href="javascript:;">俄罗斯地理</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">俄罗斯地理概述</a></dd>
+            <dd><a href="javascript:;">俄罗斯地理之最</a></dd>
+            <dd><a href="">俄罗斯人文地理</a></dd>
+            <dd><a href="">俄罗斯自然地理</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item layui-nav-itemed">
+          <a href="javascript:;">俄罗斯文化艺术</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">俄罗斯之昨日</a></dd>
+            <dd><a href="javascript:;">今日俄罗斯</a></dd>
+          </dl>
+        </li>
+        
+        <li class="layui-nav-item layui-nav-itemed">
+          <a href="javascript:;">俄语国家相关</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">中亚五国</a></dd>
+            <dd><a href="javascript:;">独联体国家</a></dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="layui-body">
+    <!-- 内容主体区域 -->
+    <div style="padding: 15px;">
+      <blockquote class="layui-elem-quote layui-text">
+        蒙古-鞑靼桎梏 Монголо-татарское иго на Руси
+      </blockquote>
+      <div class="layui-card layui-panel">
+        <div class="layui-card-header">
+          
+        </div>
+  <div class="layui-card-body">
+  <div class="layui-bg-gray" style="padding: 16px;">
+  <div class="layui-row layui-col-space15">
+    <div class="layui-col-md6">
+      <div class="layui-card">
+        <div class="layui-card-header">评价</div>
+        <div class="layui-card-body">
+          复杂<br>
+          否定与肯定并存
+        </div>
+      </div>
+    </div>
+    <div class="layui-col-md6">
+      <div class="layui-card">
+        <div class="layui-card-header">重要影响</div>
+        <div class="layui-card-body">
+          基辅罗斯分裂<br>
+          是一个“政治联邦”
+        </div>
+      </div>
+    </div>
+    <div class="layui-col-md6">
+      <div class="layui-card">
+        <div class="layui-card-header">否定态度</div>
+        <div class="layui-card-body">
+          “蒙古的统治，是俄罗斯历史上最具悲剧性的一页，使东北罗斯脱离了欧洲大家庭，阻碍与遏制了俄罗斯的正常发展”。<br>
+  
+        </div>
+      </div>
+    </div>
+    <div class="layui-col-md6">
+      <div class="layui-card">
+        <div class="layui-card-header">肯定态度</div>
+        <div class="layui-card-body">
+          “莫斯科的强大应该归功于蒙古”<br>
+          “基辅罗斯与金帐汗国的联合，使俄罗斯在与西方的争斗中，立于不败之地”
+        </div>
+      </div>
+    </div>
+
+</div>
+
+ 
+
+
+  <!-- 引入layui框架的JS文件 -->
+  <script src="//cdn.staticfile.org/layui/2.8.6/layui.js"></script>
+  <!-- 底部的折叠栏 -->
+  <script src="//unpkg.com/layui@2.9.8/dist/layui.js"></script>
+  <script>
+    layui.use(['layer'], function(){
+      var layer = layui.layer;
+      // 监听图片点击事件，弹出提示框并跳转相关页面
+      $('.image').on('click', function(){
+        var index = $(this).data('index');
+        layer.msg('即将跳转至' + $(this).find('.caption').text() + '页面');
+        setTimeout(function(){
+          window.location.href = './history.html?index=' + index;
+        }, 1000);
+      });
+    });
+  </script>
+
+        </div>
+      </div>
+      <br><br>
+    </div>
+  </div>
+  <div class="layui-footer">
+    <!-- 底部固定区域 -->
+    管理员：Limonthe
+  </div>
+</div>
+ 
+<script src="//cdn.staticfile.org/layui/2.8.6/layui.js"></script>
+<script>
+//JS 
+
+
+layui.use(['element', 'layer', 'util'], function(){
+  var element = layui.element;
+  var layer = layui.layer;
+        // 监听图片点击事件，弹出提示框并跳转相关页面
+      $('.image').on('click', function(){
+        var index = $(this).data('index');
+        layer.msg('即将跳转至' + $(this).find('.caption').text() + '页面');
+        setTimeout(function(){
+          window.location.href = './history.html?index=' + index;
+        }, 1000);
+      });
+    });
+  var util = layui.util;
+  var $ = layui.$;
+  
+  //头部事件
+  util.event('lay-header-event', {
+    menuLeft: function(othis){ // 左侧菜单事件
+      layer.msg('展开左侧菜单的操作', {icon: 0});
+    },
+    menuRight: function(){  // 右侧菜单事件
+      layer.open({
+        type: 1,
+        title: '更多',
+        content: '<div style="padding: 15px;">处理右侧面板的操作</div>',
+        area: ['260px', '100%'],
+        offset: 'rt', // 右上角
+        anim: 'slideLeft', // 从右侧抽屉滑出
+        shadeClose: true,
+        scrollbar: false
+      });
+    }
+  });
+});
+</script>
+</body>
+</html>

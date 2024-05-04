@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>历史内容</title>
+  <!-- 引入layui框架 -->
+  <link rel="stylesheet" href="//cdn.staticfile.org/layui/2.8.6/css/layui.css">
+  <!-- 引入自定义CSS文件 -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="layui-container">
+    <h1>历史内容</h1>
+          <!-- 添加返回链接 -->
+      <a href="/rebornlL/packages/baselayui/history/historyhometest.html" class="back-link">返回</a>
+    <div class="content">
+      <!-- 根据参数值显示相应的历史内容 -->
+      <div class="history" id="history1">
+        <h2>古代俄罗斯</h2>
+        <p>这里是古代俄罗斯的历史内容。</p>
+      </div>
+      <div class="history" id="history2">
+        <h2>基辅罗斯</h2>
+        <p>这里是基辅罗斯的历史内容。</p>
+      </div>
+      <div class="history" id="history3">
+        <h2>莫斯科公国</h2>
+        <p>这里是莫斯科公国的历史内容。</p>
+      </div>
+      <div class="history" id="history4">
+        <h2>俄罗斯帝国（沙俄）</h2>
+        <p>这里是沙皇俄国的历史内容。</p>
+      </div>
+      <div class="history" id="history5">
+        <h2>苏维埃俄国（苏俄）</h2>
+        <p>这里是苏俄时期的历史内容。</p>
+      </div>
+      <div class="history" id="history6">
+        <h2>苏维埃联盟（苏联）</h2>
+        <p>这里是苏联的历史内容。</p>
+      <div class="history" id="history7">
+        <h2>现代俄罗斯</h2>
+        <p>这里是现代俄罗斯的历史内容。</p>
+      </div>
+    </div>
+  </div>
+  <!-- 引入layui框架的JS文件 -->
+  <script src="//cdn.staticfile.org/layui/2.8.6/layui.js"></script>
+  <script>
+    layui.use(['layer'], function(){
+      var layer = layui.layer;
+
+      // 解析URL参数，获取index值并显示对应的历史内容
+      function showHistory() {
+        var index = getParameterByName('index');
+        if (!index) {
+          // 如果没有提供index参数，显示错误消息
+          layer.msg('参数不正确，返回历史页面');
+          setTimeout(function(){
+            // 一秒钟后返回主页面
+            location.replace('./historyhometest.html');
+          }, 1000);
+        } else {
+          var historyId = 'history' + index;
+          var history = document.getElementById(historyId);
+          if (history) {
+            history.style.display = 'block';
+          } else {
+            // 如果index参数无效，显示错误消息
+            layer.msg('参数不正确，返回历史页面');
+            setTimeout(function(){
+              // 一秒钟后返回主页面
+              location.replace('./historyhometest.html');
+            }, 1000);
+          }
+        }
+      }
+
+      // 获取URL参数的值
+      function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+      }
+
+      // 显示历史内容
+      showHistory();
+    });
+  </script>
+</body>
+</html>

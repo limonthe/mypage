@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title> 主页的demo </title>
+  <link rel="stylesheet" href="/rebornlL/layui/css/layui.css">
+
+
+
+</head>
+<body>
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+    <div class="layui-logo layui-hide-xs layui-bg-black">导航栏</div>
+    <!-- 头部区域（可配合layui 已有的水平导航） -->
+    <ul class="layui-nav layui-layout-left">
+      <!-- 移动端显示 -->
+      <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-header-event="menuLeft">
+        <i class="layui-icon layui-icon-spread-left"></i>
+      </li>
+      
+      <li class="layui-nav-item layui-hide-xs"><a href="/rebornlL/home.html">首页</a></li>
+      <li class="layui-nav-item layui-hide-xs"><a href="/rebornlL/sample.html">翻译</a></li>
+      <li class="layui-nav-item layui-hide-xs"><a href="/rebornlL/packages/baselayui/corpus.html">语料库</a></li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">俄语学习</a>
+        <dl class="layui-nav-child">
+          <dd><a href="/rebornlL/packages/baselayui/grammar.html">俄语语法</a></dd>
+          <dd><a href="/rebornlL/packages/baselayui/reading.html">俄语阅读</a></dd>
+          <dd><a href="/rebornlL/packages/baselayui/history.html">俄语国家概况</a></dd>
+        </dl>
+      </li>
+    </ul>
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item layui-hide layui-show-md-inline-block">
+        <a href="javascript:;">
+          <img src="/rebornlL/image/profile1.jpeg" class="layui-nav-img">
+          是我捏
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="">Your Profile</a></dd>
+          <dd><a href="">Settings</a></dd>
+          <dd><a href="">Sign out</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
+        <a href="javascript:;">
+          <i class="layui-icon layui-icon-more-vertical"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree" lay-filter="test">
+        <li class="layui-nav-item layui-nav-itemed">
+          <a class="" href="javascript:;">俄罗斯历史</a>
+          <dl class="layui-nav-child">
+            <dd><a class="layui-this" href="/rebornlL/packages/baselayui/history.html">时间概述</a></dd>
+            <dd><a href="/rebornlL/packages/baselayui/reading.html">历史概述</a></dd>
+            <dd><a href="javascript:;">历史之最</a></dd>
+            <dd><a href="/rebornlL/packages/baselayui/history/historyhometest.html">历史阶段</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item layui-nav-itemed">
+          <a href="javascript:;">俄罗斯地理</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">俄罗斯地理概述</a></dd>
+            <dd><a href="javascript:;">俄罗斯地理之最</a></dd>
+            <dd><a href="">俄罗斯人文地理</a></dd>
+            <dd><a href="">俄罗斯自然地理</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item layui-nav-itemed">
+          <a href="javascript:;">俄罗斯文化艺术</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">俄罗斯之昨日</a></dd>
+            <dd><a href="javascript:;">今日俄罗斯</a></dd>
+          </dl>
+        </li>
+        
+        <li class="layui-nav-item layui-nav-itemed">
+          <a href="javascript:;">俄语国家相关</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">中亚五国</a></dd>
+            <dd><a href="javascript:;">独联体国家</a></dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="layui-body">
+   <div style="padding: 15px;">
+      <blockquote class="layui-elem-quote layui-text">
+        历史时间线
+      </blockquote>
+      <div class="layui-card layui-panel">
+        <div class="layui-card-header">
+          --
+        </div>
+        <div class="layui-card-body">
+        <ul class="layui-timeline">
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">6世纪左右</h3>
+      <p>
+        耳曼人俘虏了许多斯拉夫人，并且把他们卖给罗马人作奴隶 斯拉夫按照斯拉夫语族中的含义，有荣誉、光荣的意思
+        <br>因此“斯拉夫”就逐渐变为“奴隶”的意思
+        <br>拉丁文和英文中的“奴隶Slavs”一词，并非来源于斯拉夫人这一名称，切勿搞混。 
+        <br>斯拉夫按照斯拉夫语族中的含义，有荣誉、光荣的意思<i class="layui-icon"></i>
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">公元6-7世纪</h3>
+      <p>维京人开始在波罗的海东部沿岸突击，然后再安置下来</p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">公元8世纪末期</h3>
+      <p>
+        维京人就从今天的俄罗斯遁河而下，展开长期的入侵，并沿途设置要塞来作防卫
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">公元9世纪</h3>
+      <p>
+        维京人统治了基辅
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">基辅罗斯时期（9世纪中叶—12世纪30年代）</h3>
+      <p>
+        维京人奥列格（史称奥列格大公）在东欧平原上建立的以基辅为首都的早期封建国家Kiev Russ（基辅罗斯），又称古罗斯、罗斯国。当地人管新来的维京人称为“罗斯人”，意思为“精于航海的人”这是最早的俄罗斯国家，当时它只是一个南自基辅、北到拉多加湖、西从普斯科夫、东到木罗姆的一个东欧内陆小国
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">882年</h3>
+      <p>
+        诺夫哥罗德王公奥列格(维京人)征服基辅及其附近地区后建立的以东斯拉夫人为主体的东欧君主制国家，首都是基辅。公元882年疆域包括第聂伯河到伊尔门湖之间的土地，是东斯拉夫人文化的发源地
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">1240年</h3>
+      <p>
+        基辅罗斯被蒙古拔都西征时所灭，拔都随之建立金帐汗国
+      </p>
+    </div>
+  </li>
+    <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">莫斯科大公国（1283年—1547年）</h3>
+      <p>
+        弗拉基米尔公国，又叫弗拉基米尔—苏兹达尔公国。十二至十三世纪东北罗斯最大的公国，以弗拉基米尔城为中心。十至十二世纪初属基辅罗斯。随后取得独立
+      <br>十三世纪分为特维尔、莫斯科等十多个公国，然仍以家族中最长者为弗拉基米尔大公
+      <br>在蒙古帝国统治时期，弗拉基米尔大公真正变成了罗斯各王公之领袖的头衔。大公由金帐汗国的汗册封，并不由某一家族世袭，获得大公头衔的王公有权将弗拉基米尔并入自己的领地。作为牵制俄罗斯各公国力量的重要手段，金帐汗倾向于将忠于自己的王公封为弗拉基米尔大公。罗斯的王公们围绕大公头衔展开了激烈的争夺
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">十四世纪初</h3>
+      <p>
+        莫斯科王公由钦察汗国（金帐汗国）封为弗拉基米尔大公后，逐渐兼并临近诸公国，随使莫斯科公国成为统一俄罗斯的中心
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">1328年</h3>
+      <p>
+        莫斯科大公伊凡一世获得了替蒙古人征税的权利，依靠金钱、蒙古人和教会的支持，伊凡一世击败劲敌特维尔大公国，取得弗拉基米尔大公及全罗斯大公称号，一跃而成为蒙古人之下的俄罗斯第一大公，开始领导罗斯诸侯
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">1480年</h3>
+      <p>
+        伊凡三世于是在1480年停止对金帐汗国的纳贡，从而结束了两个半世纪的金帐汗国统治
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">1502年</h3>
+      <p>
+        伊凡三世灭金帐汗国
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">1453年</h3>
+      <p>
+        曾辉煌一时的拜占庭帝国被奥斯曼帝国灭亡，拜占庭帝国皇帝君士坦丁十一世英勇战死。他的弟弟带着两个儿子和女儿索菲亚·帕列奥洛格逃到罗马。后来，这两儿一女在其父死后被罗马教皇抚养成人。当时的罗马政治家们为了借助俄罗斯的军事力量抵御奥斯曼土耳其人，便用联姻的方式将索菲亚许配给了莫斯科大公伊凡三世。
+<br>索菲娅由此佩戴着拜占庭帝国威严的双头鹰徽记来到了俄罗斯。索菲娅协助夫君伊凡三世把俄罗斯的土地基本上联合到一起，形成了一个疆域辽阔的统一的国家
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">1497年</h3>
+      <p>
+        双头鹰作为国家徽记首次在俄罗斯的国旗上出现，直至1918年
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">沙皇俄国（1547年-1721年）</h3>
+      <p>
+        1547年伊凡四世自称沙皇，自留里克王朝起首都为莫斯科，其国号称俄国。
+      <br>伊凡四世，别称伊凡雷帝、恐怖的伊凡，俄罗斯历史上的第一位沙皇
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">1712年</h3>
+      <p>
+        俄国沙皇彼得一世迁都至圣彼得堡（在一战时该城改名为彼得格勒），以窥视欧洲大陆。
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">俄罗斯帝国（1721年-1917年），沙皇俄国，沙俄</h3>
+      <p>
+        1721年， 彼得一世在与瑞典王国进行大北方战争胜利后，被元老院授予“全俄罗斯皇帝”的头衔，并建立俄罗斯帝国。对外走上了侵略扩张的道路，曾吞并欧亚多个国家
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">18世纪中后期</h3>
+      <p>
+        叶卡捷琳娜二世统治时达到鼎盛时期
+      <br>叶卡捷琳娜在位时期因治国有方、功绩显赫，使当时的俄罗斯成为名副其实的欧洲第一强国。其才干与名气也闻名海内外，成为俄罗斯人心目中和彼得一世齐名的一代英主
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">1812年</h3>
+      <p>
+        俄罗斯帝国在俄法战争中，成功击退了法兰西第一帝国皇帝拿破仑一世亲自率领的法国军队。在亚历山大一世统治时的俄罗斯参与全欧洲抵抗拿破仑的反法同盟，并成为战后神圣同盟的领导者，此后长期充当“欧洲宪兵”的角色。
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">1861年</h3>
+      <p>
+        亚历山大二世废除农奴制
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">1867年</h3>
+      <p>
+        以720万美元的低价把阿拉斯加卖给美国。
+      <br>沙俄为了破解俄国的财政困境、通过拉拢美国平衡英国的影响力、避免英国在阿拉斯加开辟第二战线、扭转过度扩张带来的力有不逮，将俄国的远东战略重心转向东北亚。以720万美元的低价把阿拉斯加卖给美国。
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">1905年</h3>
+      <p>
+        沙俄在日俄战争中被击败
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">1914年</h3>
+      <p>
+        处于内忧外患的俄国卷入第一次世界大战，从1915年处于战争劣势阶段，人民处于水深火热之中，革命一触即发
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">1917年3月（俄历2月）</h3>
+      <p>
+        俄国二月革命爆发，俄国皇帝尼古拉二世退位，俄罗斯帝国灭亡。
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">1918年7月17日</h3>
+      <p>
+        沙皇一家被列宁下令处决。
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">苏维埃俄国（1917年-1922年）</h3>
+      <p>
+        1917年11月7日（俄历10月25日）十月社会主义革命 ，建立世界上第一个社会主义国家政权—— 俄罗斯苏维埃联邦社会主义共和国。
+      <br>苏维埃红军击败了白军以及协约国的联合武装干涉，巩固了政权。
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">苏联（1922年-1991年）</h3>
+      <p>
+        1922年12月30日，俄罗斯联邦同南高加索联邦、乌克兰和白俄罗斯组建苏联。冷战期间成为超级大国，通过大力发展军事力量来同美国争霸。
+      <br>斯大林时期开展五年计划，进行工业化与农业集体化，把苏联改造成了一个重工业和军事上的强国，成为欧洲第一，世界第二的经济强国。
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">1938年</h3>
+      <p>
+        苏联采取“祸水西推”的策略终于和德国结盟秘密签订了《 苏德互不侵犯条约 》。
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">1941年12月6日</h3>
+      <p>
+        苏军从莫斯科城郊开始反攻，到次年4月下旬击溃德军50多个师，击毙击伤德军80多万人，将敌军击退150多公里，解除了对莫斯科的威胁，夺回了60多座城市。莫斯科保卫战的胜利宣告了希特勒“闪击战”的彻底破产，粉碎了德军自二战开始以来不可战胜的神话，也成为苏联卫国战争的一个转折点。
+      <br>为赢得卫国战争的胜利，苏联军民付出了2700多万人（是战前人口的14%）牺牲的代价，6个加盟共和国被德国占领，1700座城镇和超过3.1万个工厂被夷为平地，四分之一的国民财富毁于战火 。
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">1945年8月8日</h3>
+      <p>
+        苏联对日宣战，出兵中国东北和朝鲜北部（八月风暴行动），关东军被击毙83000人，被俘594000人。
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">1962年10月15日—1962年10月28日</h3>
+      <p>
+        加勒比海地区发生了一场震惊世界的古巴导弹危机。
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">1964年</h3>
+      <p>
+        赫鲁晓夫下台。赫鲁晓夫时期全面否定斯大林，并对斯大林政策进行了改革。
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">1964年</h3>
+      <p>
+        勃列日涅夫上台后结束了赫鲁晓夫的去斯大林化，在一定程度上恢复了斯大林 的正面形象，纠正了赫鲁晓夫对斯大林的过度批判，但是他的思想与政策过度僵化，导致矫枉过正，反而使苏联国家与社会丧失了改革与进步的活力 。
+      <br>勃列日涅夫时代的后半部分被称为苏联的“停滞期”和“僵化期”。
+      <br>在勃列日涅夫时期，苏联一跃成为世界上军费开支最大的国家。 苏联军备竞赛对经济的长期发展了产生严重影响。
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">1988年</h3>
+      <p>
+        戈尔巴乔夫宣布苏联将放弃勃列日涅夫主义。
+      <br>随着开放性政策的日益深入，苏共的历史问题和历史罪行得到揭露的同时，逐渐失去了民心，最终导致了苏共党内和苏联社会的思想混乱。
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">1991年12月25日</h3>
+      <p>
+        戈尔巴乔夫宣布辞职，将国家权力移交给俄罗斯总统叶利钦。
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">12月25日晚</h3>
+      <p>
+        苏联国旗从克里姆林宫上空缓缓降下，苏维埃社会主义共和国联盟宣告解体。
+      <br>苏联解体后，分裂为十五个国家，且大部分经济及军事力量由最大加盟国俄罗斯联邦继承。
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">俄罗斯联邦（1991-）</h3>
+      <p>
+        1990年6月12日， 俄罗斯苏维埃联邦社会主义共和国最高苏维埃发表《国家主权宣言》，宣布 俄罗斯联邦 在其境内拥有“绝对主权”（俄罗斯独立日）。
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">1992年4月16日</h3>
+      <p>
+        俄罗斯第6次人代会决定将国名改为“俄罗斯”，从而恢复了历史上的名称；17日，最后决定使用两个同等地位的正式国名“俄罗斯联邦”和“俄罗斯”
+      <br>苏联解体后，最大加盟国俄罗斯继承苏联大部分军事力量。拥有世上最大的核武器库。在“一超多强”的国际体系中，俄罗斯是有较大影响力的强国，其军工实力雄厚，特别是高等教育、航空航天技术，居世界前列。
+      <br>俄罗斯还是联合国安全理事会五大常任理事国之一，对安理会议案拥有一票否决权。此外，俄罗斯还是金砖国家之一。
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">1992年4月16日</h3>
+      <p>
+        俄罗斯第6次人代会决定将国名改为“俄罗斯”，从而恢复了历史上的名称；17日，最后决定使用两个同等地位的正式国名“俄罗斯联邦”和“俄罗斯”
+      <br>苏联解体后，最大加盟国俄罗斯继承苏联大部分军事力量。拥有世上最大的核武器库。在“一超多强”的国际体系中，俄罗斯是有较大影响力的强国，其军工实力雄厚，特别是高等教育、航空航天技术，居世界前列。
+      <br>俄罗斯还是联合国安全理事会五大常任理事国之一，对安理会议案拥有一票否决权。此外，俄罗斯还是金砖国家之一。
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">1993年11月30日</h3>
+      <p>
+        象征俄罗斯国家团结和统一的双头鹰又“飞”回到俄罗斯的国徽上。
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">二十世纪末</h3>
+      <p>
+        国家杜马从法律上确定了双头鹰是俄罗斯的国家象征。叶利钦执政时推动市场经济和民主制，采取的“ 休克疗法”让俄罗斯联邦经济濒临崩溃。
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">20世纪90年代</h3>
+      <p>
+        俄罗斯联邦和其下属的车臣共和国分离分子之间爆发了两次战争。。
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">1999年12月31日</h3>
+      <p>
+        叶利钦辞职并推举普京作为接班人。
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <h3 class="layui-timeline-title">2000年2月28日</h3>
+      <p>
+        俄罗斯控制了绝大部分车臣土地，获得胜利。不过战后车臣的恐怖活动依然频繁。。
+      </p>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+    <div class="layui-timeline-content layui-text">
+      <div class="layui-timeline-title">今天</div>
+    </div>
+  </li>
+</ul>
+        </div>
+  </div>
+</div>
+<!-- 条目中可以是任意内容，如：<img src=""> -->
+ 
+<script src="/rebornlL/layui/layui.js"></script>
+<script>
+layui.use('carousel', function(){
+  var carousel = layui.carousel;
+  //建造实例
+  carousel.render({
+    elem: '#test1'
+    ,width: '100%' //设置容器宽度
+    ,arrow: 'always' //始终显示箭头
+        //,anim: 'updown' //切换动画方式
+  });
+});
+</script>
+
+
+
+
+
+
+  <blockquote class="layui-elem-quote" style="margin-top: 30px;">
+    <div class="layui-text">
+      <ul>
+        <li>初衷是构建一个关于基础的俄语学习的项目</li>
+        <li>目前这个demo还处于demo的demo阶段咧 (づ ●─● )づ</li>
+        <li>页面的呈现依托于：<span>layui-v<span id="version"></span></span></li>
+        <li>layui 是一套开源的 Web UI（界面）组件库。</li>
+      </ul>
+    </div>
+  </blockquote>
+</div>
+
+
+    <div style="padding: 15px;">内容主体区域</div>
+  </div>
+  
+  <div class="layui-footer">
+    <!-- 底部固定区域 -->
+    底部固定区域
+  </div>
+</div>
+<script src="/rebornlL/layui/layui.js"></script>
+<script>
+//JS 
+layui.use(['element', 'layer', 'util'], function(){
+  var element = layui.element
+  ,layer = layui.layer
+  ,util = layui.util
+  ,$ = layui.$;
+  
+  //头部事件
+  util.event('lay-header-event', {
+    //左侧菜单事件
+    menuLeft: function(othis){
+      layer.msg('展开左侧菜单的操作', {icon: 0});
+    }
+    ,menuRight: function(){
+      layer.open({
+        type: 1
+        ,content: '<div style="padding: 15px;">处理右侧面板的操作</div>'
+        ,area: ['260px', '100%']
+        ,offset: 'rt' //右上角
+        ,anim: 5
+        ,shadeClose: true
+      });
+    }
+  });
+</script>
+<script>
+layui.use(['layer', 'form'], function(){
+  var layer = layui.layer;
+  var form = layui.form;
+  
+  layer.msg('!');
+});
+</script> 
+
+
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+/* DEFAULTS
+----------------------------------------------------------*/
+
+body   
+{
+    background: #b6b7bc;
+    font-family: "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    color: #696969;
+    font-size: 150%;
+}
+
+a:link, a:visited
+{
+    color: #034af3;
+}
+
+/* Remove Disqus ads */
+iframe[sandbox]:not([sandbox=""]) {
+    display: none !important;
+}
+
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+a:active
+{
+    color: #034af3;
+}
+
+p
+{
+    margin-bottom: 10px;
+    line-height: 1.6em;
+    text-align: justify;
+}
+
+.input-textbox
+{
+    font-size: 170%;
+}
+
+/* HEADINGS   
+----------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #666666;
+    text-transform: none;
+    font-weight: 200;
+    margin-bottom: 0px;
+}
+
+h1
+{
+    font-size: 1.6em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+h2
+{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+h3
+{
+    font-size: 1.2em;
+}
+
+h4
+{
+    font-size: 1.1em;
+}
+
+h5, h6
+{
+    font-size: 1em;
+}
+
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+.page
+{
+    max-width: 960px;
+    background-color: #fff;
+    margin: 0px auto 0px auto;
+    border: 1px solid #496077;
+}
+
+.header
+{
+    margin: 0px;
+    padding:0px;
+    background: #4b6c9e;
+    color: #f9f9f9;
+    width: 100%;
+    height: 5.5em;
+}
+
+.header .title
+{
+    font-weight: 700;
+    margin: 0px;
+    border: none;
+    line-height: 2em;
+    font-size: 2em;
+    padding: 0px 0px 0px 20px;
+    clear: both;
+    height: 80px;
+}
+
+.header .title a
+{
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.header .subtitle a
+{
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.header .subtitle
+{
+    padding: 0px 0px 0px 25px;
+    clear: both;
+    font-weight: bold;
+}
+
+.header .title h1
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+.main
+{
+    padding: 0.7em 0.7em 5em 0.7em;
+    margin: 0px;
+}
+
+
+
+.footer
+{
+    color: #4e5766;
+    padding: 8px 0px 0px 0px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: normal;
+}
+
+
+.clear
+{
+    clear: both;
+}
+
+.title
+{
+    display: block;
+    float: left;
+    text-align: left;
+    width: auto;
+}
+
+.submitButton
+{
+    text-align: right;
+    padding-right: 10px;
+}
+
+.englishSample {font-weight: bold; font-style: italic;}
+table.key tr td {padding-left: 1.5em; padding-right: 0px; text-align: center;}
+table.key tr th {text-align: left;}
+
+
+/* Markup page
+------------- */
+
+u
+{
+    text-decoration: none;
+}
+
+.stressMarkUnderline
+{
+    text-decoration: underline;
+}
+
+.stressMarkRed
+{
+    color: #EE4848;
+}
+
+.stressMarkAccent
+{
+}
+
+.stressMarkAccent:after
+{
+    content:"\301"
+}
+
+.cell 
+{
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	margin-bottom: 1em;
+	margin-right: 0.5em;
+}
+
+.cell .russian 
+{
+	font-size: 170%;
+}
+
+.cell .translation 
+{
+	color: blue;
+}
+
+.cell .sounds-like 
+{
+	color: green;
+}
+
+div.tickboxes
+{
+    vertical-align: top;
+}
+
+div.tickboxes div.stress-style-button, div.tickboxes div.tickbox
+{
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    cursor: pointer;
+}
+
+div.tickboxes div.stress-style-button
+{
+    width: 1.5em;
+    margin: 0px;
+    text-align: center;
+    padding: 0px 0em 0.2em 0em;
+    border: 1px solid red;
+}
+
+div.tickboxes div.tickbox
+{
+    white-space: nowrap; 
+    margin-right: 0.3em; 
+    margin-bottom: 0em; 
+    margin-left: 0px;
+    margin-top: 0px;
+    padding: 0px 0.5em 0.2em 0.5em;
+    width: 7em;
+}
+
+div.tickboxes div.tickbox input
+{
+    background: white;
+    color: Black;
+}
+
+.big-button
+{
+    font-size: 120%;
+    font-weight: bold;
+    padding: .1em .5em .2em .5em;
+}
+
+.highlights div,
+.highlights input
+{
+    font-weight: normal;
+    background: #81EF65;
+    color: #696969;
+}
+    
+div.tickboxes div label
+{
+    padding-left: 0.3em;
+}
+    
+div.tickboxes 
+{
+    list-style-type: none
+}
+
+.jokes_table tr td
+{
+    width: 50%;
+    vertical-align: top;
+    padding-bottom: 0.5em;
+}
+
